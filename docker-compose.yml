@@ -3,7 +3,7 @@ version: '3.8'
 services:
   web:
     build: .
-    command: gunicorn taskly.wsgi:application --bind 0.0.0.0:8000
+    command: gunicorn task_management.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - .:/django
     ports:
@@ -14,8 +14,8 @@ services:
   db:
     image: postgres:13
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
+      POSTGRES_USER: chiragpatil
+      POSTGRES_PASSWORD: pass1023
       POSTGRES_DB: taskmanagement
     ports:
       - "5432:5432"
